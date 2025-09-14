@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Showcase Grid Assignment</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', Arial, sans-serif;
+    background: linear-gradient(90deg, #fceabb 0%, #fcc8d8 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    height: 100vh;
+    align-items: center;
+}
+
+/* Left image grid */
+.grid-area {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 18px;
+    padding: 40px;
+    box-sizing: border-box;
+    max-width: 600px;
+    max-height: 600px;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+}
+.img1, .img2 {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    height: 100%;
+}
+.img3 {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    aspect-ratio: 2 / 3;
+    width: 100%;
+    height: 100%;
+}
+
+/* Styling */
+.grid-area img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 11px;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.13);
+}
+
+/* Right info card */
+.info-card {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.info-card .card-content {
+    background: #fb7171;
+    border-radius: 14px;
+    padding: 42px 60px 38px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.info-card small {
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin-bottom: 7px;
+}
+.info-card h1 {
+    font-size: 40px;
+    font-weight: bold;
+    margin: 0 0 20px 0;
+    letter-spacing: 2px;
+}
+.info-card .cta-row {
+    display: flex;
+    align-items: center;
+    margin-top: 18px;
+    font-size: 20px;
+    font-weight: 500;
+}
+.info-card .cta-row .arrow {
+    font-size: 27px;
+    font-weight: bold;
+    margin-left: 9px;
+    vertical-align: middle;
+    transition: color .2s;
+}
+.info-card .cta-row:hover .arrow {
+    color: #fff;
+}
+
+/* Responsive */
+/* Responsive */
+@media (max-width: 1200px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+        padding: 40px 20px;
+    }
+    .grid-area {
+        max-width: 500px;
+        max-height: 500px;
+        padding: 20px;
+        margin-bottom: 32px;
+    }
+    .info-card {
+        width: 100%;
+        justify-content: flex-start;
+    }
+    .info-card .card-content {
+        width: 100%;
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 950px) {
+    .grid-area {
+        max-width: 400px;
+        max-height: 400px;
+        padding: 10px;
+    }
+    .info-card h1 {
+        font-size: 28px;
+    }
+    .info-card small {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 700px) {
+    .grid-area {
+        gap: 10px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        aspect-ratio: 1 / 1;
+        max-width: 90vw;
+        max-height: 90vw;
+        padding: 10px;
+    }
+    .info-card .card-content {
+        padding: 18px;
+    }
+    .info-card h1 {
+        font-size: 22px;
+    }
+    .info-card small {
+        font-size: 14px;
+    }
+    .info-card .cta-row {
+        font-size: 16px;
+    }
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="grid-area">
+        <img class="img1" src="1.jpg" alt="Stage on Broadway">
+        <img class="img2" src="2.jpg" alt="Dinner table">
+        <img class="img3" src="3.jpg" alt="Restaurant street">
+    </div>
+    <div class="info-card">
+        <div class="card-content">
+            <small>LOREM IPSUM</small>
+            <h1>LOREM IPSUM<br>SET ADEMIR</h1>
+            <div class="cta-row">
+                Click <img src="icon-arrow.png" alt="Arrow" style="height: 1.5em; width: auto; margin-left: 9px; vertical-align: middle; display: inline-block;">
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
